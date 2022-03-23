@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Max WebSockets</title>
+	 <style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --big: 100px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  padding: 0 20px;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #3b0000;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+  /*changer le hidden en js*/
+}
+.phoneIconeImg{
+  position: absolute;
+}
+.phone {
+  position: relative;
+  width: 100%;
+  display: block;  
+
+} 
+.phone .phoneIcone{
+  position: absolute;
+}
+
+.batterie{
+  width: 34.25px;
+}
+
+.wifi{
+  margin: 0 3px;
+  width: 21.4333px;
+}
+
+.resaux{
+ width: 22.0833px;
+}
+
+.notif__time {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  justify-content: center;
+}
+
+.phoneIcone img {
+  height: 100%;
+}
+.notif__time > h1 {
+  margin-top: 90px;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 75px;
+  font-weight: 100;
+}
+.phoneIcone{
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 15px;
+  width: 100%;
+  z-index: 10;
+}
+.notif__time > h2 {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-size: 22px;
+  font-weight: 100;
+}
+.box--1{
+  display: none;
+}
+.box--2{
+  display: none;
+}
+.box--3{
+  display: none;
+}
+.box--4{
+  display: none;
+}
+.box--5{
+  display: block;
+}
+.notif__boxes > .box {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  height: fit-content;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 12px;
+}
+.appIcone {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+.appIcone img{
+  width: 100%;
+  border-radius: inherit;
+}
+
+.appTitre{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-transform: uppercase;
+}
+.titrePLus {
+  text-transform: none;
+}
+.appInfo{
+  margin: 0;
+  margin-left: 12px;
+  font-weight: 100;
+}
+
+.icone{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: #838383;
+}
+
+.icone img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.phoneCall {
+  position: fixed;
+  display: none;
+  color: white;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: #200000;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+.phoneCall .phoneIcone{
+  position: relative;
+}
+.interface {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.nom {
+  text-align: center;
+  font-size: 49px;
+  font-weight: 100;
+  padding-top: 20%;
+}
+
+.ville {
+  text-align: center;
+  padding-top: 1%;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.heure {
+  position: absolute;
+  left: 0;
+}
+
+.icones_haut {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  padding-right: 2%;
+}
+
+.boutons {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 70px;
+}
+
+.messageBulle{
+  width: 33.72px;
+  height: 24.98px;
+}
+
+.bulle--texte{
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 10px;
+}
+
+.message{
+  position: absolute;
+  bottom: 178px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}
+
+.raccrocher {
+  display: flex;
+  position: relative;
+}
+
+.repondre {
+  display: flex;
+  position: relative;
+  margin-left: 100px;
+}
+
+.icone_raccrocher {
+  background-color: #E05353;
+}
+
+.icone_phoneRaccrocher{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(136deg) !important;
+}
+
+.icone_phoneReprondre{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.icone_repondre {
+  background-color: #B0E54B;
+}
+
+.bouton--texte {
+  position: absolute;
+  z-index: 2;
+  top: 60px;
+  width: 200%;
+  text-align: center;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 14px;
+}
+
+.raccroche {
+  display: none;
+  color: white;
+}
+
+.repondu {
+  display: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+
+.phoneAnswer {
+  position: fixed;
+  display: none;
+  color: white;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: #242424;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+.phoneAnswer .phoneIcone{
+  position: relative;
+}
+
+
+
+.boutonRepond .bouton--texte{
+  position: absolute;
+  bottom:0px;
+}
+
+.btn{
+  position: relative;
+  width: fit-content;
+}
+
+.boutonRepond{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  column-gap: 40px;
+  row-gap: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  top:54%;
+}
+
+.phoneDecline{
+  display: none;
+  background-color: black;
+  position: fixed;
+  color: white;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+}
+
+.phoneSleep{
+  display: none;
+  background-color: black;
+  position: fixed;
+  color: white;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+   </style>
+   <meta charset="UTF-8">
+   <title>webtest6</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+   <div class="phoneSleep">
+    </div> 
+    <div class="phone">
+          <div class="phoneIcone"> 
+          <div class="phoneIconeImg">
+            <img class="resaux" src="img/resauWhite.png" alt="resaux">
+          <img class="wifi" src="img/wifiWhite.png" alt="wifi">
+          <img class="batterie" src="img/powerWhite.png" alt="battery"></div>
+        </div> 
+        <div class="notif__time">
+            <h1 id="temps"></h1>
+          <h2 id="journee"></h2>
+          </div>
+        <div class="notif__boxes">
+          <div class="box box--1">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/alarme.png" alt=""></div>
+            <h4 class="appInfo">Alarme</h4></div>
+            <div class="appTexte"><p>Vous avez manqué votre alarme. <br>
+              Jeudi 20 mars 2012
+              </p></div>
+          </div>
+          <div class="box box--2">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/appel.png" alt=""></div>
+            <h4 class="appInfo">Appel</br>
+              <span class="titrePLus">Père</span></h4></div>
+            <div class="appTexte"><p>3 nouveaux messages vocales de la part de Père.
+              </p></div>
+          </div>
+          <div class="box box--3">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/photobia.png" alt=""></div>
+            <h4 class="appInfo">Photobia</h4></div>
+            <div class="appTexte"><p>Votre photo à reçu 5 likes et 3 commentaires. <br>Cliquez pour en savoir plus.</p></div>
+          </div>
+          <div class="box box--4">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/smileorama.png" alt=""></div>
+            <h4 class="appInfo">Smileorama</h4></div>
+            <div class="appTexte"><p>Vous avez 20 notifications en attente. <br>
+              Cliquez pour en savoir plus.</p></div>
+          </div>
+          <div class="box box--5">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/courriel.png" alt=""></div>
+            <h4 class="appInfo">Courriel</br>
+              <span class="titrePLus">École TIM</span></h4></div>
+            <div class="appTexte"><p>Bonjour, ça serait vraiment important d’avoir une 
+              rencontre avec vous par rapport à la réussite de votre enfant, car à ce stade, Sasha risque 
+              d’avoir un échec au bulletin. Si elle coule, elle va devoir s’inscrire pour des cours d’été ou reprendre son année.</p></div>
+          </div> 
+          <div class="box box--5">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/smileorama.png" alt=""></div>
+            <h4 class="appInfo">Smileorama</h4></div>
+            <div class="appTexte"><p>DANDAN69 À laisser un commentaire : « ferme ta crisse de gueule… »<br>
+              Cliquez pour en savoir plus.</p></div>
+          </div>
+          <div class="box box--5">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/photobia.png" alt=""></div>
+            <h4 class="appInfo">Photobia</h4></div>
+            <div class="appTexte"><p>Jw-licorne À laisser un commentaire : « tu fais dure »<br>Cliquez pour en savoir plus.</p></div>
+          </div> 
+          <div class="box box--5">
+            <div class="appTitre">
+            <div class="appIcone"><img src="img/courriel.png" alt=""></div>
+            <h4 class="appInfo">Courriel</br>
+              <span class="titrePLus">École TIM</span></h4></div>
+            <div class="appTexte"><p>Bonjour, c’est pour vous aviser que Sasha Ipsum à couler son examen de
+              mathématique à 45%. Ça va très mal pour elle ces temps-ci. Est-ce que
+              vous seriez disponible la semaine prochaine pour une rencontre?</p></div>
+          </div>
+        </div>    
+    </div>
+    <div class="phoneCall">
+      <div class="interface">
+        <div class="phoneIcone"> 
+        <div class="heure" id="heure"></div>
+            <div class="phoneIconeImg">
+              <img class="resaux" src="img/resauWhite.png" alt="resaux">
+            <img class="wifi" src="img/wifiWhite.png" alt="wifi">
+            <img class="batterie" src="img/powerWhite.png" alt="battery"></div>
+          </div> 
+        <div class="nom">
+          Papa
+        </div>
+        <div class="ville">
+          Laval, Qc
+        </div>
+        <div class="message">
+            <img src="img/bulleWhite.png" alt="" class="messageBulle">
+            <p class="bulle--texte">Messages</p>
+        </div>
+        <div class="boutons">
+          <div class="raccrocher">
+            <p class="bouton--texte"> Raccrocher </p>
+            <div class="icone icone_raccrocher">
+                <img class='icone_phoneRaccrocher' src="img/telephoneWhite.png" alt="telephone raccrocher">
+            
+            </div>
+          </div>
+          <div class="repondre">
+            <p class="bouton--texte"> Répondre  </p>
+            <div class="icone icone_repondre">
+                <img class='icone_phoneReprondre' src="img/telephoneWhite.png" alt="telephone raccrocher">
+            
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phoneAnswer">
+        <div class="interface">
+          <div class="phoneIcone"> 
+          <div class="heure" id='time'></div>
+              <div class="phoneIconeImg">
+                <img class="resaux" src="img/resauWhite.png" alt="resaux">
+              <img class="wifi" src="img/wifiWhite.png" alt="wifi">
+              <img class="batterie" src="img/powerWhite.png" alt="battery"></div>
+            </div> 
+          <div class="nom">
+            Papa
+          </div>
+          <div class="ville" id='tempsAppel'>
+            00:00
+          </div>
+          <div class="boutonRepond">
+              <div class="muet btn">
+              <div class="icone icone_muet">
+                  <img class='icone_muet' src="img/muet.png" alt="muet">
+              </div>
+              <p class="bouton--texte"> Muet </p>
+          </div>
+          <div class="numpad btn">
+              <div class="icone icone_numpad">
+                  <img class='icone_numpad' src="img/numpad.png" alt="numpad">
+              </div>
+              <p class="bouton--texte"> numpad </p>
+          </div>
+          <div class="volume btn">
+              <div class="icone icone_volume">
+                  <img class='icone_volume' src="img/son.png" alt="volume">
+              </div>
+              <p class="bouton--texte"> volume </p>
+          </div>
+          <div class="ajouter btn">
+              <div class="icone icone_ajouter">
+                  <img class='icone_ajouter' src="img/plus.png" alt="ajouter">
+              </div>
+              <p class="bouton--texte"> ajouter </p>
+          </div>
+          <div class="facetime btn">
+              <div class="icone icone_facetime">
+                  <img class='icone_facetime' src="img/facetime.png" alt="facetime">
+              </div>
+              <p class="bouton--texte"> facetime </p>
+          </div>
+          <div class="contact btn">
+              <div class="icone icone_contact">
+                  <img class='icone_contact' src="img/contact.png" alt="contact">
+              </div>
+              <p class="bouton--texte"> contact </p>
+          </div>
+      </div>
+          <div class="boutons">
+            <div class="raccrocher">
+              <p class="bouton--texte"> Raccrocher </p>
+              <div class="icone icone_raccrocher">
+                  <img class='icone_phoneRaccrocher' src="img/telephoneWhite.png" alt="telephone raccrocher">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phoneDecline">
+      </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+    <script src="/js/MaxWSClient.js"></script>
+  </body>
+</html>

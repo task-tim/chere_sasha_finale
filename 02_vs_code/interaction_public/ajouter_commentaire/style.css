@@ -1,0 +1,84 @@
+ body{
+     background-color: #CBD8ED;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     height: 100vh;
+     margin: 0;
+ }
+
+ h1{
+     text-transform: uppercase;
+     font-size: 100;
+     font-family: aileron,sans-serif;
+     font-weight: 700;
+     font-style: normal;
+     color: #6452A1;
+     margin-bottom: 25px;
+     margin-top: 42px;
+ }
+
+ .boite_message{
+    height: 577px;
+    width: 957px;
+    background-color: #F8F8FC;
+    border: #AE9BD6 2px solid;
+    box-shadow: black 0.2px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+
+ .bulleMessage{
+     width: 100%;
+     height:100%;
+ }
+
+ .espaceCommentaire{
+     background-color: white;
+     border-radius: 27px;
+     border:#AE9BD6 solid 2px;
+     color:#6452A1;
+     width: 560px;
+     height: 71px;
+     font-family: aileron,sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 30px;
+     position: relative;
+     padding-left: 15px;
+     margin-right: 11px;
+ }
+
+ .btnEnvoyer{
+     color: white;
+     background-color:#AE9BD6;
+     height: 71px;
+     width: 172px;
+     border-radius: 27px;
+     border: none;
+     font-family: aileron,sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 30px;
+ }
+
+ .texteInvitation{
+     position: absolute;
+     top:0;
+     padding: 10px 34px;
+     margin: 8px;
+     font-family: aileron,sans-serif;
+     font-weight: 300;
+     font-style: normal;
+     font-size: 28px;
+     color: #717171;
+ }
+ .bulle{
+    width: 657px;
+    height:268.77px;
+    margin-bottom: 15px;
+    position: relative;
+ }
