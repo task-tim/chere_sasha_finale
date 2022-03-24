@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 41.0, 84.0, 2120.0, 1290.0 ],
+		"rect" : [ 225.0, 174.0, 1920.0, 1052.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -2812,8 +2812,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -3327,7 +3325,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 166.0, 117.0, 2122.0, 1275.0 ],
+						"rect" : [ -21292.0, -21249.0, 2122.0, 1275.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3355,19 +3353,8 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-7",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 364.0, 392.0, 29.5, 22.0 ],
-									"text" : "0"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
@@ -3684,15 +3671,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-31", 0 ],
-									"order" : 0,
-									"source" : [ "obj-188", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"order" : 1,
 									"source" : [ "obj-188", 0 ]
 								}
 
@@ -3821,13 +3799,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-195", 0 ],
-									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -4536,7 +4507,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 274.0, 136.0, 1506.0, 1206.0 ],
+						"rect" : [ -21292.0, -21249.0, 1506.0, 1206.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4584,7 +4555,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 876.192752122879028, 568.84201717376709, 56.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "-13 1000"
 								}
 
@@ -4609,18 +4579,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 979.192752122879028, 210.84201717376709, 49.0, 22.0 ],
 									"text" : "-9 1000"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 504.0, 420.0, 29.5, 22.0 ],
-									"text" : "0"
 								}
 
 							}
@@ -4938,13 +4896,6 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-57", 0 ],
-									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
@@ -4954,14 +4905,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"order" : 2,
-									"source" : [ "obj-135", 0 ]
 								}
 
 							}
@@ -5168,7 +5111,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 127.0, 233.0, 1370.0, 1061.0 ],
+						"rect" : [ -21292.0, -21249.0, 1370.0, 1061.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5216,7 +5159,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 412.192752122879028, 546.379991054534912, 56.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "-13 1000"
 								}
 
@@ -7137,8 +7079,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -7836,8 +7776,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -8100,7 +8038,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 1040.519736111164093, 4737.567106008529663, 68.0, 22.0 ],
-					"text" : "del 100000"
+					"text" : "del 130000"
 				}
 
 			}
@@ -8153,7 +8091,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-120",
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -8218,8 +8155,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.719121396541595, 4167.718729853630066, 191.0, 22.0 ],
-					"text" : "read animation_conclusion_3.mp4"
+					"patching_rect" : [ 446.719121396541595, 4167.718729853630066, 207.0, 22.0 ],
+					"text" : "read animation_conclusion_final.mp4"
 				}
 
 			}
@@ -8887,7 +8824,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
-					"midpoints" : [ 490.219121396541595, 4199.718729853630066, 1755.907934844493866, 4199.718729853630066, 1755.907934844493866, 693.666763305664063, 1955.625548779964447, 693.666763305664063 ],
+					"midpoints" : [ 456.219121396541595, 4199.718729853630066, 1755.907934844493866, 4199.718729853630066, 1755.907934844493866, 693.666763305664063, 1955.625548779964447, 693.666763305664063 ],
 					"source" : [ "obj-103", 0 ]
 				}
 
@@ -10697,21 +10634,21 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "boite_souvenir_02.wav",
-				"bootpath" : "C:/MAMP/htdocs/Chere-Sasha/docs/preproduction/max/prototype_timeline_max",
+				"bootpath" : "~/Desktop/prototype_timeline_max",
 				"patcherrelativepath" : ".",
 				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "prototype_timeline_max",
-				"bootpath" : "C:/MAMP/htdocs/Chere-Sasha/docs/preproduction/max",
+				"bootpath" : "~/Desktop",
 				"patcherrelativepath" : "..",
 				"type" : "fold",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_delayMaison.maxpat",
-				"bootpath" : "C:/MAMP/htdocs/Chere-Sasha/docs/preproduction/max/prototype_timeline_max",
+				"bootpath" : "~/Desktop/prototype_timeline_max",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
